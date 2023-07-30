@@ -11,3 +11,11 @@
 [이중석님 유튜브](https://www.youtube.com/@ejoongseok)
 
 [해당 강의 실습 github](https://github.com/ejoongseok/product-order-service)
+
+### POJO 상품 등록 기능 구현하기
+
+변수 추출: Command + Option + V
+
+TODO: request DTO 를 record로 사용하셨는데, java 17 record 알아보기.
+
+
