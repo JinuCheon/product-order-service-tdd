@@ -2,20 +2,13 @@ package com.example.productorderservicetdd.product;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class ProductServiceTest {
 
-    private ProductService productService;
-    private ProductPort productPort;
-    private ProductRepository productRepository;
-
-    @BeforeEach
-    void setUp() {
-        productRepository = new ProductRepository();
-        productPort = new ProductAdaptor(productRepository);
-        productService = new ProductService(productPort);
-    }
-
+    @Autowired ProductService productService;
     @Test
     void 상품등록() {
         final AddProductRequest request = 상품등록요청_생성();
