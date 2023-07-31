@@ -67,3 +67,29 @@ POJO로 개발한 후 스프링으로 전환하고 마지막에 JPA로 전환하
 - 첫번째에는 POJO 클래스로 처음부터 개발을 했는데, 상품 조회는 간단하니까 그냥 처음부터 spring boot test 로 진행.
   - 그때그때 더 빠른 방법을 선택하면 된다고 한다. -> 와 이거 언제 익숙해져서 TDD가 빨라지는걸까
 
+## API 테스트로 전환하기
+
+다시 보니 api 테스트도 이렇게 테스트 작성 이후에 구현.
+
+전체 Flow를 보면,
+
+1. 서비스 테스트 작성
+2. 서비스 로직 작성
+3. api 테스트 작성
+4. api 로직 작성
+
+```java
+    @Test
+    void 상품조회() {
+        ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
+        Long productId = 1L;
+
+        ExtractableResponse<Response> response = RestAssured.given().log().all()
+                .when()
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
+
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+    }
+```
