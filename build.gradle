@@ -30,6 +30,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'io.rest-assured:rest-assured:4.4.0' //api 요청 테스트를 위한 의존성. api 재활용
+    implementation 'com.google.guava:guava:31.0.1-jre'
+
 }
 
 tasks.named('test') {

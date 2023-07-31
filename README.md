@@ -56,3 +56,7 @@ POJO로 개발한 후 스프링으로 전환하고 마지막에 JPA로 전환하
 - 로직 매서드 추출: Command + Option + M
 - TODO: 테스트에서 요청과 응답 매서드 반환을 var 타입으로 받는다. 왜 그런걸까?
 - TODO: RestAssured 에 대해서 알아보자.
+  - RestAssured 의 문제점 중 하나는, 데이터가 캐싱되어서 격리가 잘 안된다.
+  - [우아한 ATDD' 영상 참고](https://www.youtube.com/watch?v=ITVpmjM4mUE&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
+  - DatabaseCleanup 객체의 주석 확인.
+- TODO: InitializingBean 가 어떤 클래스인지 알아보기
