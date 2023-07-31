@@ -60,3 +60,10 @@ POJO로 개발한 후 스프링으로 전환하고 마지막에 JPA로 전환하
   - [우아한 ATDD' 영상 참고](https://www.youtube.com/watch?v=ITVpmjM4mUE&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
   - DatabaseCleanup 객체의 주석 확인.
 - TODO: InitializingBean 가 어떤 클래스인지 알아보기
+
+## 상품 조회 API 개발
+- 리팩토링 메뉴 전체 조회: Control + T
+  - 클래스 빼내는 곳에 사용
+- 첫번째에는 POJO 클래스로 처음부터 개발을 했는데, 상품 조회는 간단하니까 그냥 처음부터 spring boot test 로 진행.
+  - 그때그때 더 빠른 방법을 선택하면 된다고 한다. -> 와 이거 언제 익숙해져서 TDD가 빨라지는걸까
+
