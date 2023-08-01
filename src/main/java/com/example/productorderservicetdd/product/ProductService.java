@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,11 +41,14 @@ class ProductService {
         return ResponseEntity.ok(response);
     }
 
-    public void updateProduct(Long productId, UpdateProductRequest updateProductRequest) {
+    @PutMapping("/{productId}")
+    public ResponseEntity<Void> updateProduct(@PathVariable final Long productId,
+                              @RequestBody UpdateProductRequest updateProductRequest) {
         final Product product = productPort.getProduct(productId);
 
         product.update(updateProductRequest.name(), updateProductRequest.price(), updateProductRequest.discountPolicy());
 
         productPort.save(product);
+        return ResponseEntity.ok().build();
     }
 }
