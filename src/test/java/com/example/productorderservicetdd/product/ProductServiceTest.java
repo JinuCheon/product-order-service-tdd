@@ -3,28 +3,31 @@ package com.example.productorderservicetdd.product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest
 class ProductServiceTest {
 
-    private ProductPort productPort;
-    private ProductService productService;
+    @Autowired ProductService productService;
 
-    @BeforeEach
-    void setUp() {
-        productPort = Mockito.mock(ProductPort.class);
-        productService = new ProductService(productPort);
-    }
 
     @Test
     void 상품수정() {
-        Long productId = 1L;
-        when(productPort.getProduct(productId)).thenReturn(new Product("상품명", 1000, DiscountPolicy.NONE));
+        productService.addProduct(ProductSteps.상품등록요청_생성());
+        final Long productId = 1L;
+        final UpdateProductRequest request = new UpdateProductRequest("상품업데이트", 1000, DiscountPolicy.NONE);
 
-        UpdateProductRequest updateProductRequest = new UpdateProductRequest("상품업데이트", 1000, DiscountPolicy.NONE);
+        productService.updateProduct(productId, request);
 
-        productService.updateProduct(productId, updateProductRequest);
+        ResponseEntity<GetProductResponse> response = productService.getProduct(productId);
+        GetProductResponse body = response.getBody();
+        assertThat(body.name()).isEqualTo("상품업데이트");
+        assertThat(body.price()).isEqualTo(1000);
     }
 
 }
