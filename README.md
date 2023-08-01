@@ -93,3 +93,18 @@ POJO로 개발한 후 스프링으로 전환하고 마지막에 JPA로 전환하
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
     }
 ```
+
+
+## POJO 상품 수정 기능 구현하기
+- 도메인 로직은 반드시 테스트 할 것.
+  - Product.update()
+  - Service는 테스트 안하는가?
+- 테스트에서 mock, stub 등은 본인이 편하고 빠른 방식대로 할 것.
+  - 서비스 테스트에서 interface를 익명 클래스로 구현하여, stub 객체를 통해서 구현하는 것을 보여주셨다.
+  - 난 아직까지는 Mock 방식이 더 익숙한 것 같다. 코드가 너무 길어지는 느낌을 받았다.
+  - 빨리 만드는 것도 목적임을 유의.
+
+인프런 질문에 이런게 있었다.
+> productPort.getProduct로 조회를 해온 뒤 product.update(~~~)로 변경을 하면, 변경 감지가 일어날텐데, 굳이 save를 호출하신 이유가 뭐에용??
+
+다음 강의를 보고나서 다시 생각해보자.
