@@ -138,3 +138,10 @@ Q. 커밋 시점? 단위? 테스트 작성 이후 커밋을 하는지
 - 도메인 규칙 / 로직은 반드시 모두 테스트하기
 
 Q. 레이어드 아키텍처의 컨트롤러를 사용하지 않는지? end point가 service로 사용되는지?
+
+## 패키지 구조 만들기
+- domain: 엔티티(도메인), 정책
+- application
+  - servie: 비즈니스 로직, request/response dto
+  - port: adaptor 구현체
+  - adaptor: 외부 시스템 인터페이스, Spring Data JPA Repository

@@ -1,6 +1,7 @@
 package com.example.productorderservicetdd.order;
 
 import com.example.productorderservicetdd.ApiTest;
+import com.example.productorderservicetdd.order.application.service.CreateOrderRequest;
 import com.example.productorderservicetdd.product.ProductSteps;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

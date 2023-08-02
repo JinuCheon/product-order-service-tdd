@@ -1,8 +1,9 @@
-package com.example.productorderservicetdd.payment;
+package com.example.productorderservicetdd.payment.application.service;
 
-import com.example.productorderservicetdd.order.Order;
+import com.example.productorderservicetdd.order.domain.Order;
+import com.example.productorderservicetdd.payment.application.port.PaymentPort;
+import com.example.productorderservicetdd.payment.domain.Payment;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

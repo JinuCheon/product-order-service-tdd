@@ -1,6 +1,6 @@
 package com.example.productorderservicetdd.order;
 
-import com.example.productorderservicetdd.order.CreateOrderRequest;
+import com.example.productorderservicetdd.order.application.service.CreateOrderRequest;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

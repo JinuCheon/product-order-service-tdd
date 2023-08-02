@@ -1,6 +1,7 @@
 package com.example.productorderservicetdd.product;
 
 import com.example.productorderservicetdd.ApiTest;
+import com.example.productorderservicetdd.product.adaptor.ProductRepository;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,8 @@ import static org.assertj.core.api.Assertions.*;
 
 class ProductApiTest extends ApiTest {
 
-    @Autowired ProductRepository productRepository;
+    @Autowired
+    ProductRepository productRepository;
 
     @Test
     void 상품등록() {

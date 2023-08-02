@@ -1,9 +1,9 @@
-package com.example.productorderservicetdd.order;
+package com.example.productorderservicetdd.order.application.service;
 
 import org.springframework.util.Assert;
 
-record CreateOrderRequest(Long productId, int quantity) {
-    CreateOrderRequest(Long productId, int quantity) {
+public record CreateOrderRequest(Long productId, int quantity) {
+    public CreateOrderRequest(Long productId, int quantity) {
         this.productId = productId;
         this.quantity = quantity;
         Assert.notNull(productId, "productId must not be null");

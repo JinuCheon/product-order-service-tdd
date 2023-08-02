@@ -1,5 +1,8 @@
 package com.example.productorderservicetdd.product;
 
+import com.example.productorderservicetdd.product.application.service.GetProductResponse;
+import com.example.productorderservicetdd.product.application.service.ProductService;
+import com.example.productorderservicetdd.product.application.service.UpdateProductRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,7 +13,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 class ProductServiceTest {
 
-    @Autowired ProductService productService;
+    @Autowired
+    ProductService productService;
 
 
     @Test
