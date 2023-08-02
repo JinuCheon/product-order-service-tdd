@@ -23,7 +23,7 @@ class ProductServiceTest {
 
         ResponseEntity<GetProductResponse> response = productService.getProduct(productId);
         GetProductResponse body = response.getBody();
-        assertThat(body.name()).isEqualTo("상품업성데이트");
+        assertThat(body.name()).isEqualTo("상품업데이트");
         assertThat(body.price()).isEqualTo(1000);
     }
 
